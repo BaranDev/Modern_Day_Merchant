@@ -1,0 +1,1 @@
+CountdownState = Class{__includes = BaseState}
