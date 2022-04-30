@@ -14,12 +14,12 @@ gImages =
 }
 
 gFonts = {
-    --set color to blue
-    ['title_text'] = love.graphics.newFont('assets/fonts/wellbutrin.regular.ttf', 64)
-    --['medium'] = love.graphics.newFont('assets/fonts/font.ttf', 16),
-    --['large'] = love.graphics.newFont('assets/fonts/font.ttf', 32)
+    ['default'] = love.graphics.newFont('assets/fonts/wellbutrin.regular.ttf', 64),
+    ['medium'] = love.graphics.newFont('assets/fonts/wellbutrin.regular.ttf', 128),
+    ['large'] = love.graphics.newFont('assets/fonts/wellbutrin.regular.ttf', 256)
 }
-
+--set font to default
+love.graphics.setFont(gFonts['default'])
 
 gStateMachine = StateMachine {
     ['title'] =     function() return TitleScreenState() end,
@@ -30,6 +30,8 @@ gStateMachine = StateMachine {
     ['intro'] =    function() return IntroState() end
 }
 
+--Text library fonts
+Text.configure.font_table("gFonts")
 
 function love.load()
 
