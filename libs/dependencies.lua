@@ -1,14 +1,17 @@
-Class = require 'libs/class'
-push = require 'libs/push'
-TEsound = require 'libs/TEsound'
-anim8 = require 'libs/anim8'
-require 'libs/StateMachine'
+Class = require "libs/class"
+push = require "libs/push"
+TEsound = require "libs/TEsound"
+anim8 = require "libs/anim8"
+require "libs/StateMachine"
+require "libs/constants"
+require "libs/ase-loader"
+Text = require "libs/slog-text"
+--require "libs/peachy"
 
-require 'libs/states/BaseState'
-require 'libs/states/CountdownState'
-require 'libs/states/PauseState'
-require 'libs/states/PlayState'
-require 'libs/states/ScoreState'
-require 'libs/states/TitleScreenState'
-require 'libs/states/IntroState'
-require 'libs/constants'
+require "states/BaseState"
+require "states/CountdownState"
+require "states/PauseState"
+require "states/PlayState"
+require "states/ScoreState"
+require "states/TitleScreenState"
+require "states/IntroState"
