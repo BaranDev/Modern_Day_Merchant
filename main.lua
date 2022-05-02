@@ -3,6 +3,7 @@ require 'libs/dependencies'
 BACKGROUND_SCROLL_SPEED=60
 BACKGROUND_SCROLL_DIRECTION = 'LEFT'
 BACKGROUND_X=0
+debug = false
 
 gImages = 
 {

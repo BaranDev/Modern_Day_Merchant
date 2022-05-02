@@ -1,6 +1,5 @@
 TitleScreenState = Class{__includes = BaseState}
 --local coloredText = love.graphics.newText(font, {{1, 0, 0}, "Hello ", {0, 0, 1}, " world"})
-
 example = {
     display_mode = 1,
     maxmodes = 9,
@@ -10,6 +9,8 @@ example = {
     }
 
 function TitleScreenState:init() 
+
+   
 
     self.grid = anim8.newGrid(700,300,gImages['title_sprite_sheet']:getWidth(),gImages['title_sprite_sheet']:getHeight())
     self.animation = anim8.newAnimation(self.grid('1-7',1),0.5)
@@ -101,10 +102,28 @@ function TitleScreenState:update(dt)
         self.check = 1
     end
 
+    
+    if debug then
+        if self.selections['PLAY'] then
+            print('Play')
+        elseif self.selections['HIGHSCORES'] then
+            print('Highscores')
+        elseif self.selections['EXIT'] then
+            print('Exit')
+        end
+    end 
 end-- end of update
 
+function mouseIsOn(x,y,w,h)
+    if mx>x and mx<x+w and my>y and my<y+h then
+        return true
+    else
+        return false
+    end
+end
 
 function TitleScreenState:render() 
+
     self.animation:draw(gImages['title_sprite_sheet'],VIRTUAL_WIDTH/4-40,VIRTUAL_HEIGHT/16)
 
     --draw rectangle from -200 of titleanimation
